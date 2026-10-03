@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* ============================================
+   Drishti Design System — Global CSS
+   SIH 2026: Explainable AI for Diabetic Retinopathy Screening & District-Level Triage
+   
+   Palette:
+   - Primary Dark Blue: #0E2F76
+   - Secondary Blue: #AAC0E1
+   - Very Light Background: #F5FEFF
+   - Accent Blue: #2563EB / #1D4ED8
+   - Dark Navy Text: #0A192F / #0E2F76
+   - Soft Blue-Gray: #475569 / #64748B
+   ============================================ */
+
+:root {
+  --color-primary: #0E2F76;
+  --color-primary-light: #2563EB;
+  --color-secondary: #AAC0E1;
+  --color-secondary-light: #E0EBF8;
+  --color-bg-light: #F5FEFF;
+  --color-navy: #0A192F;
+  --color-text-dark: #0E2F76;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  --color-border-subtle: rgba(170, 192, 225, 0.4);
+  --color-card-bg: #FFFFFF;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-body);
+  background-color: var(--color-bg-light);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+.hero-heading {
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem); /* ~64-80px */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-navy);
+}
+
+.section-heading {
+  font-size: clamp(2.25rem, 4vw, 3.25rem); /* ~40-56px */
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+.sub-heading {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-primary);
+}
+
+.text-body-large {
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem); /* ~17-19px */
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.text-body-standard {
+  font-size: 1rem; /* 16px */
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* Color Utility Classes */
+.text-drishti-primary { color: #0E2F76; }
+.text-drishti-accent { color: #2563EB; }
+.text-drishti-navy { color: #0A192F; }
+.bg-drishti-light { background-color: #F5FEFF; }
+.bg-drishti-primary { background-color: #0E2F76; }
+.bg-drishti-secondary { background-color: #AAC0E1; }
+
+/* Custom Badge */
+.drishti-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(170, 192, 225, 0.25);
+  border: 1px solid rgba(14, 47, 118, 0.2);
+  color: #0E2F76;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Premium Rounded Cards (border-radius: 20-28px) */
+.drishti-card {
+  background-color: #FFFFFF;
+  border-radius: 1.5rem; /* 24px */
+  border: 1px solid var(--color-border-subtle);
+  padding: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(14, 47, 118, 0.06), 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drishti-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(14, 47, 118, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+/* Large Product Container (border-radius: 28-36px) */
+.drishti-product-container {
+  background: #FFFFFF;
+  border-radius: 2rem; /* 32px */
+  border: 1px solid rgba(170, 192, 225, 0.4);
+  box-shadow: 0 25px 60px -15px rgba(14, 47, 118, 0.12);
+  overflow: hidden;
+}
+
+/* Buttons (border-radius: 12-16px) */
+.drishti-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: linear-gradient(135deg, #0E2F76 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem; /* 14px */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(14, 47, 118, 0.25);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.drishti-btn-primary:hover {
+  background: linear-gradient(135deg, #0A192F 0%, #0E2F76 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(14, 47, 118, 0.35);
+}
+
+.drishti-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background-color: #FFFFFF;
+  color: #0E2F76;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem; /* 14px */
+  border: 1.5px solid rgba(14, 47, 118, 0.3);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.drishti-btn-secondary:hover {
+  background-color: #E0EBF8;
+  border-color: #0E2F76;
+  transform: translateY(-2px);
+}
+
+/* Glassmorphism Accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(170, 192, 225, 0.4);
+  box-shadow: 0 12px 32px rgba(14, 47, 118, 0.08);
+}
+
+/* Floating Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5FEFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #AAC0E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0E2F76;
+}
+
+/* Layout Container */
+.drishti-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
